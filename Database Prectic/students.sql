@@ -1,3 +1,10 @@
+
+SET AUTOCOMMIT = OFF;  /*Autocommit = off*/
+
+COMMIT; /*Safe Point*/
+
+ROLLBACK; /*Rollback to Last Commit*/
+
 USE arbaz;  /*USE DATABASE*/
 
 TRUNCATE TABLE students;  /*DELETE DATA*/
@@ -31,3 +38,4 @@ CREATE TABLE employee(
     email VARCHAR(75),
     phone_number INT
 );
+
