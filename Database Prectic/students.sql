@@ -117,4 +117,35 @@ ROLLBACK;
 /*After Accidenly applying wrong query, we have to ROLLBACK to the Last-Commit*/
 
 
+/*DATES*/
+/*Create Date Table*/
+CREATE TABLE test(
+	my_date DATE,
+    my_time TIME,
+    my_datetime DATETIME
+);
+
+/*Inserting Data in Test Table*/
+INSERT INTO test VALUES(
+	CURRENT_DATE(), CURRENT_TIME(), NOW()
+);
+
+/*Insert NULL values*/
+INSERT INTO test VALUES(
+	CURRENT_DATE() + 1, NULL, NULL
+);
+
+/*UNIQUE Constraint*/
+ALTER TABLE students
+ADD CONSTRAINT 
+UNIQUE (city);
+
+/*NOT NULL Constraint*/
+ALTER TABLE students
+MODIFY name VARCHAR(30) NOT NULL;
+
+
+
+SELECT * FROM test;
+
 SELECT * FROM students;
