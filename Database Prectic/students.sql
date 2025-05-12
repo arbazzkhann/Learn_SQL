@@ -1,41 +1,120 @@
+/*Database Creation*/
+CREATE DATABASE arbaz;
 
-SET AUTOCOMMIT = OFF;  /*Autocommit = off*/
+/*Delete Database*/
+DROP DATABASE students;
 
-COMMIT; /*Safe Point*/
+/*Using Database*/
+USE arbaz;
 
-ROLLBACK; /*Rollback to Last Commit*/
 
-USE arbaz;  /*USE DATABASE*/
+/*Create Table*/
+CREATE TABLE students(
+	id INT,
+    name VARCHAR(35),
+    city VARCHAR(30)
+);
 
-TRUNCATE TABLE students;  /*DELETE DATA*/
 
+/*Insert Data into Table*/
+/*Single Entry*/
+INSERT INTO students VALUES 
+(1, "Ben 10", "Bihar");
+
+
+/*Multiple Entry*/
+INSERT INTO students VALUES
+(2, "Shinchan", "UP"),
+(3, "Doraemon", "Noida");
+
+
+/*Insert As Per Columns*/
+INSERT INTO students (id, name) VALUES
+(4, "GWEN"),
+(5, "Spiderman");
+
+
+/*Change Table name*/
+RENAME TABLE students TO employees;
+RENAME TABLE employees TO students;
+
+
+/*Delete Table*/
+DROP TABLE students;
+
+
+/*Adding new Column in Table*/
+ALTER TABLE students
+ADD COLUMN email VARCHAR(75);
+
+
+/*REMOVE new Column in Table*/
 ALTER TABLE students
 DROP COLUMN email;
 
-INSERT INTO students (id, name)
-VALUES 	(4, "Ben 10"),
-		(5, "Doraemon"),
-		(6, "Shinchan");
 
-ALTER TABLE students 
-ADD COLUMN email VARCHAR(75);
-        
-        
+/*Rename Column Name*/
+ALTER TABLE students
+RENAME COLUMN email TO Phone_Number;
+
+
+/*Modify Column Datatype and Constraints*/
+ALTER TABLE students
+MODIFY COLUMN phone_number INT;
+
+
+/*Change Column Position*/
+/*After Specific Column*/
+ALTER TABLE students
+MODIFY phone_number INT
+AFTER name;
+
+
+/*at First*/
+ALTER TABLE students
+MODIFY phone_number INT
+FIRST;
+
+
+/*ALTER DATABASE db_name READ ONLY = 0*/
+ALTER DATABASE arbaz READ ONLY = 0;
+SET SQL_SAFE_UPDATES = 0;
+
+
+/*Updating Table Data*/
+/*Single update*/
 UPDATE students
-SET city = "UP", email="ben10@gmail.com"
-WHERE id = 4;        
+SET city = "Haryana"
+WHERE id = 5;
 
 
-SELECT * FROM students;  /*VIEWING ALL DATA*/
+/*Multiple Update*/
+UPDATE students
+SET city = "Haryana",
+	name = "Hagimaru"
+WHERE id = 5;
 
-SELECT city
-FROM students;
+
+/*Delete Row in Table*/
+DELETE FROM students
+WHERE city = 'Haryana';
 
 
-CREATE TABLE employee(
-	id INT,
-    name VARCHAR(45),
-    email VARCHAR(75),
-    phone_number INT
-);
+/*Delete specific column Data*/
+UPDATE students
+SET city = NULL
+WHERE id = 2;
 
+
+/*Commit*/
+SET AUTOCOMMIT = OFF;
+/*After AutoCommit = off our data doesn't save automatically, we have to save mannually*/
+
+COMMIT;
+/*Commit Every time when you want to set Safe-Point*/
+
+ROLLBACK;
+/*After Accidenly applying wrong query, we have to ROLLBACK to the Last-Commit*/
+
+
+SELECT * FROM students;
