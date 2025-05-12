@@ -149,7 +149,46 @@ ALTER TABLE students
 MODIFY name VARCHAR(30) NOT NULL;
 
 
-
 SELECT * FROM test;
 
 SELECT * FROM students;
+
+
+/*PRIMARY KEY and FOREIGN KEY*/
+/*Creating First Table*/
+CREATE TABLE customers (
+	customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
+
+/*Inserting Values in customer_table*/
+INSERT INTO customers (first_name, last_name) VALUES 
+("Ravi", "Kumar"),
+("Suraj", "Yadav"),
+("Babu", "Rao");
+
+/*Creating Second Table*/
+CREATE TABLE transctions (
+	transction_id INT PRIMARY KEY AUTO_INCREMENT,
+    amount DECIMAL(3, 2),
+	customer_id INT,
+    FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
+);
+
+/*Inserting Values in transctions_table*/
+INSERT INTO transctions (amount, customer_id) VALUES 
+(5.24, 2),
+(7.25, 1),
+(3.79, 3),
+(2.99, 2);
+
+
+DELETE FROM customer
+WHERE customer_id = 2;
+
+/*SHOW tables*/
+SELECT * FROM customers;
+SELECT * FROM transctions;
+
+
