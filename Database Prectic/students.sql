@@ -140,6 +140,10 @@ ALTER TABLE students
 ADD CONSTRAINT 
 UNIQUE (city);
 
+/*DROP Constraint of Column*/
+ALTER TABLE students
+DROP CONSTRAINT city;
+
 /*NOT NULL Constraint*/
 ALTER TABLE students
 MODIFY name VARCHAR(30) NOT NULL;
