@@ -192,3 +192,14 @@ SELECT * FROM customers;
 SELECT * FROM transctions;
 
 
+
+/*JOINS*/
+/*INNER JOIN*/
+SELECT * FROM transctions
+INNER JOIN customers
+ON transctions.customer_id = customers.customer_id;
+
+
+
+
+
