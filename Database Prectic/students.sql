@@ -195,11 +195,58 @@ SELECT * FROM transctions;
 
 /*JOINS*/
 /*INNER JOIN*/
-SELECT * FROM transctions
-INNER JOIN customers
-ON transctions.customer_id = customers.customer_id;
+SELECT *
+FROM customers
+INNER JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+/*INNER JOIN with custom columns*/
+SELECT customers.customer_id, customers.first_name, customers.last_name, transctions.transction_id
+FROM customers
+INNER JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+
+/*LEFT Join*/
+SELECT * FROM customers
+LEFT JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+/*LEFT JOIN with custom columns*/
+SELECT customers.customer_id, customers.first_name, customers.last_name, transctions.transction_id
+FROM customers
+LEFT JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+
+/*RIGHT JOIN*/
+SELECT * FROM customers
+RIGHT JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+/*RIGHT JOIN with custom columns*/
+SELECT customers.customer_id, customers.first_name, customers.last_name, transctions.transction_id
+FROM customers
+RIGHT JOIN transctions
+ON customers.customer_id = transctions.customer_id;
+
+
+/*FULL JOIN*/
+SELECT *
+FROM customers
+LEFT JOIN transctions 
+ON customers.customer_id = transctions.customer_id
+
+UNION
+
+SELECT *
+FROM customers
+RIGHT JOIN transctions 
+ON customers.customer_id = transctions.customer_id;
 
 
 
 
 
+SELECT * FROM transctions;
+SELECT * FROM customers;
