@@ -275,6 +275,16 @@ SELECT CONCAT(first_name, " ", last_name) AS "Full Name"
 FROM customers;
 
 
+/*WILD CARD OPERATOR*/
+/* % */
+SELECT * FROM customers
+WHERE first_name LIKE "s%";
+
+/* _ */
+SELECT * FROM transctions
+WHERE amount LIKE "_._9";	
+
+
 
 SELECT * FROM transctions;
 SELECT * FROM customers;
