@@ -284,6 +284,17 @@ WHERE first_name LIKE "s%";
 SELECT * FROM transctions
 WHERE amount LIKE "_._9";	
 
+/* _ */
+SELECT * FROM customers
+WHERE first_name LIKE "_h_bh__";	
+/* _ */
+SELECT * FROM customers
+WHERE first_name LIKE "s__b%";	
+
+
+/* LIMIT CLAUSE*/
+SELECT * FROM customers
+LIMIT 2, 1;
 
 
 SELECT * FROM transctions;
