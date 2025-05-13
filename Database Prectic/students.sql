@@ -250,6 +250,11 @@ ON customers.customer_id = transctions.customer_id;
 SELECT COUNT(customer_id)
 FROM customers;
 
+/*COUNT() with Alias (AS)*/
+SELECT COUNT(customer_id) AS "Today's count"
+FROM customers;
+
+
 
 
 SELECT * FROM transctions;
