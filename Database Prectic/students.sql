@@ -245,6 +245,10 @@ RIGHT JOIN transctions
 ON customers.customer_id = transctions.customer_id;
 
 
+/*FORMULAS*/
+/*COUNT()*/
+SELECT COUNT(customer_id)
+FROM customers;
 
 
 
