@@ -255,6 +255,10 @@ SELECT COUNT(customer_id) AS "Today's count"
 FROM customers;
 
 
+/*MAX*/
+SELECT MAX(amount) AS MAXIMUM 
+FROM transctions;
+
 
 
 SELECT * FROM transctions;
