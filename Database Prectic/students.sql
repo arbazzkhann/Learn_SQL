@@ -265,6 +265,10 @@ SELECT MIN(amount) AS "MINIMUM AMOUNT"
 FROM transctions;
 
 
+/*AVG*/
+SELECT AVG(amount) AS "AVERAGE AMOUNT"
+FROM transctions;
+
 
 SELECT * FROM transctions;
 SELECT * FROM customers;
