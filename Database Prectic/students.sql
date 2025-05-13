@@ -270,5 +270,11 @@ SELECT AVG(amount) AS "AVERAGE AMOUNT"
 FROM transctions;
 
 
+/*CONCAT*/
+SELECT CONCAT(first_name, " ", last_name) AS "Full Name"
+FROM customers;
+
+
+
 SELECT * FROM transctions;
 SELECT * FROM customers;
