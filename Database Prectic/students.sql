@@ -297,5 +297,12 @@ SELECT * FROM customers
 LIMIT 2, 1;
 
 
+/*SELF JOIN*/
+SELECT * FROM customers AS A
+JOIN customers AS B
+ON A.customer_id = B.customer_id;
+
+
+
 SELECT * FROM transctions;
 SELECT * FROM customers;
