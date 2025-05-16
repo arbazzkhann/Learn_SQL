@@ -303,6 +303,14 @@ JOIN customers AS B
 ON A.customer_id = B.customer_id;
 
 
+/*Views*/
+CREATE VIEW employees_view AS
+SELECT first_name, last_name
+FROM customers;
+
+SELECT * FROM employees_view;
+
+
 
 SELECT * FROM transctions;
 SELECT * FROM customers;
