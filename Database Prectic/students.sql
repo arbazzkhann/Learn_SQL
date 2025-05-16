@@ -311,6 +311,24 @@ FROM customers;
 SELECT * FROM employees_view;
 
 
+/*INDEX*/
+SHOW INDEXES FROM customers;
+
+/*CREATE INDEX*/
+CREATE INDEX last_name_idx
+ON customers(last_name);
+
+
+/*Create Multi-column index*/
+CREATE INDEX multi_col_index
+ON customers(last_name, first_name);
+
+/*Drop Index*/
+ALTER TABLE customers
+DROP INDEX last_name_idx;
+
+
+
 
 SELECT * FROM transctions;
 SELECT * FROM customers;
