@@ -328,6 +328,30 @@ ALTER TABLE customers
 DROP INDEX last_name_idx;
 
 
+/*Sub-Queries*/
+/*CREATING TABL AND INSERTING DATA*/
+CREATE TABLE employees (
+	employee_id INT PRIMARY KEY AUTO_INCREMENT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	hourly_pay DECIMAL(5,2),
+	job VARCHAR(20),
+	hire_date DATE,
+	supervisor_id INT	
+);
+
+INSERT INTO employees (first_name, last_name, hourly_pay, job, hire_date, supervisor_id) VALUES 
+("Eugene", "Krabs", 25.50, "manager", '2023-01-02', NULL),
+("Squidward", "Tentacles", 15.00, "cashier", '2023-01-03', 5),
+("Spongebob", "Squarepants", 12.50, "cook", '2023-01-04', 5),
+("Patrik", "Star", 12.50, "cook", '2023-01-05', 5),
+("Sandy", "Cheeks", 17.25, "asst. manager", '2023-01-06', 1),
+("Sheldon", "Plankton", 10.00, "manager", '2023-01-07', 5);
+
+/*Sub-Queries*/
+SELECT first_name, last_name, hourly_pay, (SELECT AVG(hourly_pay) FROM employees)
+FROM employees;
+
 
 
 SELECT * FROM transctions;
